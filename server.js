@@ -6,18 +6,8 @@ const _PORT = process.env.PORT || 3001;
 const MONOGODB_URL = process.env.URL;
 const cors = require("cors");
 
-const allowedOrigin = "http://localhost:3000";
-const corsOptions = {
-  origin: allowedOrigin,
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
-
-// CONNECT TO DB
-const username = process.env.DATABASE_USERNAME,
-  password = process.env.DATABASE_PASSWORD,
-  database = process.env.DATABASE_NAME;
 
 const mongoose = require("mongoose");
 mongoose
